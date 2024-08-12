@@ -1,0 +1,26 @@
+---
+title: "diamonds"
+output: html_document
+---
+
+Run at `r Sys.time()`
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r include=FALSE}
+
+library(ggplot2)
+library(plotly)
+
+```
+
+
+```{r plot, warning = FALSE}
+
+plot_ly(diamonds, type = "bar") |> 
+  add_trace(x = ~clarity, y = ~price, showlegend = FALSE)
+
+```
+
